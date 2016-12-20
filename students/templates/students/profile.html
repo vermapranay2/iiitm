@@ -1,0 +1,322 @@
+<html>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+	<title>ABV-IIITM</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'students/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/font-awesome.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'students/css/style2.css' %}">
+
+	<link rel="stylesheet" href="{% static 'students/css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/w3.css' %}">
+	<link rel="logo_mid" href="{% static 'students/images/logo_mid.png' %}">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+<section class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+
+			<a href="http://www.iiitm.ac.in/" class="navbar-brand"><img alt="Brand" src="{% static 'students/images/logo_mid.png' %}"/></a>
+
+			<a href="{% url 'index' %}" class="navbar-brand">TRAINING and PLACEMENT</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="{% url 'index' %}" class="smoothScroll">HOME</a></li>
+
+{#                IPG#}
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">IPG <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="{% url 'ipg' %}#1st" class="smoothScroll">1<sup>st</sup> year</a></li>
+            <li><a href="{% url 'ipg' %}#2nd" class="smoothScroll">2<sup>nd</sup> year</a></li>
+            <li><a href="#">3<sup>rd</sup> year</a></li>
+            <li><a href="#">4<sup>th</sup> year</a></li>
+            <li><a href="#">5<sup>th</sup> year</a></li>
+
+          </ul>
+        </li>
+
+{#                MTECH#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">M.TECH <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+
+          </ul>
+        </li>
+
+{#                MBA#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MBA <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+          </ul>
+        </li>
+
+{#                PHD#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHD <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+          </ul>
+        </li>
+
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'user_logout'%}"><button type="button" class="btn btn-secondary btn-sm">LOG OUT</button></a>
+                {% endif %}
+
+
+			</ul>
+		</div>
+	</div>
+</section>
+<br><br>
+
+    <div class="container w3-card-8 panel panel-default" style="background: #fff;
+    padding: 70px 75px;
+    margin: 50px auto;
+    ">
+        <!-- ===========================
+        HEADER
+        ============================ -->
+        <div id="header" class="row wow fadeInUp">
+            <div class="col-sm-2">
+                <img class="propic" src="{{ student.Pic.url }}" alt="">
+            </div>
+            <!-- photo end-->
+
+            <div class="col-sm-10">
+                <div class="cv-title">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h1>{{ student.Name }}</h1>
+                        </div>
+                        <div class="col-sm-5 text-right dl-share">
+                            {% if student.user == user %}
+
+                            <a class="btn btn-success" href="{% url 'profile-update' pk=student.id %}"><span class="fa fa-cogs"></span> EDIT PROFILE</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <h1><small>{{ student.Roll }}</small></h1>
+                </div><!-- Title end-->
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul class="list-unstyled">
+                            <li> Course: {{ student.Course }}</li>
+                            <li> Email: {{ student.Email }} </li>
+
+
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <ul class="list-unstyled">
+                            <li>Year: {{ student.Year }}</li>
+                            <li> Website:<a href="{{ student.Website }}">{{ student.Name }}</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div><!-- header right end-->
+        </div><!-- header end-->
+
+        <hr class="firsthr">
+
+        <!-- ===========================
+        BODY LEFT PART
+        ============================ -->
+        <div class="col-md-8 mainleft">
+            <div id="statement" class="row mobmid wow fadeInUp">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-user"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>About </h3>
+                    <p>{% autoescape off %}{{ student.About }}{% endautoescape %}</p>
+                </div><!--info end-->
+            </div><!--personal statement end-->
+
+            <hr>
+
+            <div id="education" class="row mobmid wow fadeInUp">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-graduation-cap"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Education &amp; Certification</h3>
+                    {% autoescape off %}{{ student.Education }}{% endautoescape %}
+                    <!--Education & Certifications end-->
+                </div>
+            </div>
+            <hr>
+
+            <!-- ===========================
+            JOB EXPERIENCES
+            ============================ -->
+            <div id="job" class="row mobmid wow fadeInUp">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-briefcase"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Job Experiences</h3>
+                    {% autoescape off %}{{ student.Experience }}{% endautoescape %}
+
+
+                </div><!--Job experiences end-->
+            </div><!--Job experiences end-->
+        <!-- ===========================
+            PROJECTS
+            ============================ -->
+            <div id="job" class="row mobmid wow fadeInUp">
+                <div class="col-sm-1">
+                    <span class="secicon fa fa-area-chart"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11">
+                    <h3>Projects</h3>
+                    {% autoescape off %}{{ student.Projects }}{% endautoescape %}
+
+
+                </div><!--PROJECTS end-->
+            </div><!--PROJECTS end-->
+        </div><!--left end-->
+
+        <!-- ===========================
+        SIDEBAR
+        =========================== -->
+        <div class="col-md-4 mainright">
+            <div class="row wow fadeInUp">
+                <div class="col-sm-1 col-md-2 mobmid">
+                    <span class="secicon fa fa-magic"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11 col-md-10">
+                    <h3 class="mobmid">Technical skills </h3>
+
+                    {% autoescape off %}{{ student.Skills }} {% endautoescape %}
+                </div><!--info end-->
+            </div><!--tech skills end-->
+
+            <hr>
+
+            <div class="row mobmid wow fadeInUp">
+                <div class="col-sm-1 col-md-2">
+                    <span class="secicon fa fa-trophy"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11 col-md-10 ">
+                    <h3>Honors & Awards</h3>
+                    {% autoescape off %}{{ student.Honors_Awards }}{% endautoescape %}
+
+
+                </div>
+            </div>
+
+        <hr>
+
+            <div class="row  wow fadeInUp">
+                <div class="col-sm-1 col-md-2 mobmid">
+                    <span class="secicon fa fa-book"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11 col-md-10 testimonials">
+                    <h3 class="mobmid">Courses </h3>
+
+                    {% autoescape off %}{{ student.Courses }} {% endautoescape %}
+                </div><!--testimonials end-->
+            </div><!--tech skills end-->
+        <hr>
+        <div class="row wow fadeInUp ">
+                <div class="col-sm-1 col-md-2 mobmid">
+                    <span class="secicon fa fa-check-square"></span>
+                </div><!--icon end-->
+
+                <div class="col-sm-11 col-md-10 testimonials">
+                    <h3 class="mobmid">Test Scores </h3>
+
+                    {% autoescape off %}{{ student.Test_Scores }} {% endautoescape %}
+                </div><!--testimonials end-->
+            </div>
+        </div><!--right end-->
+    </div><!--container end-->
+
+
+    <!-- ===========================
+    FOOTER
+    =========================== -->
+    <section class=" modal-footer">
+	<div class="container-fluid text-center" >
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h3>ABV-IIITM Gwalior</h3>
+				<p>Copyright © 2016. All right Reserved.</p>
+				developed by..
+				<br>
+				Pranay Verma | Gaurav Agarwal
+
+
+      </div>
+
+	</div>
+</div>
+
+
+</section>
+
+    <!--necessary scripts and plugins-->
+    <script src="{% static 'students/js/jquery.js' %}"></script>
+    <script src="{% static 'students/js/bootstrap.min.js' %}"}></script>
+    <script src="{% static 'students/js/jquery.parallax.js' %}"}></script>
+    <script src="{% static 'students/js/smoothscroll.js' %}"></script>
+
+    <script src="{% static 'students/js/wow.min.js' %}"></script>
+    <script src="{% static 'students/js/custom.js' %}"></script>
+
+    <script src="{% static 'students/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'students/js/evenfly.js' %}"></script>
+
+</body>
+
+</html>

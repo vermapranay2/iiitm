@@ -1,0 +1,99 @@
+
+<head>
+	<meta charset="utf-8">
+	<title>ABV-IIITM</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'students/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/font-awesome.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'students/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/w3.css' %}">
+	<link rel="logo_mid" href="{% static 'students/images/logo_mid.png' %}">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{% load staticfiles %}
+    <section class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+
+			<a href="http://www.iiitm.ac.in/" class="navbar-brand"><img alt="Brand" src="{% static 'students/images/logo_mid.png' %}"/></a>
+
+			<a href="{% url 'index' %}" class="navbar-brand">TRAINING and PLACEMENT</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="{% url 'index' %}" class="smoothScroll">HOME</a></li>
+
+{#                IPG#}
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">IPG <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="{% url 'ipg' %}#1st" class="smoothScroll">1<sup>st</sup> year</a></li>
+            <li><a href="{% url 'ipg' %}#2nd" class="smoothScroll">2<sup>nd</sup> year</a></li>
+            <li><a href="#">3<sup>rd</sup> year</a></li>
+            <li><a href="#">4<sup>th</sup> year</a></li>
+            <li><a href="#">5<sup>th</sup> year</a></li>
+
+          </ul>
+        </li>
+
+{#                MTECH#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">M.TECH <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+
+          </ul>
+        </li>
+
+{#                MBA#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MBA <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+          </ul>
+        </li>
+
+{#                PHD#}
+                <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHD <span class="caret"></span></a>
+          <ul class="dropdown-menu active">
+            <li><a href="#">1<sup>st</sup> year</a></li>
+            <li><a href="#">2<sup>nd</sup> year</a></li>
+
+          </ul>
+        </li>
+
+
+			</ul>
+		</div>
+	</div>
+</section>
+    <br> <br> <br> <br> <br>
+{% block body %}
+{% endblock %}
+
+
+<script src="{% static 'students/js/jquery.js' %}"></script>
+<script src="{% static 'students/js/bootstrap.min.js' %}"}></script>
+<script src="{% static 'students/js/jquery.parallax.js' %}"}></script>
+<script src="{% static 'students/js/smoothscroll.js' %}"></script>
+
+<script src="{% static 'students/js/wow.min.js' %}"></script>
+<script src="{% static 'students/js/custom.js' %}"></script>
+</body>
+</html>

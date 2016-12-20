@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ABV-IIITM</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'students/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/font-awesome.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'students/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'students/css/w3.css' %}">
+	<link rel="logo_mid" href="{% static 'students/images/logo_mid.png' %}">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+
+<!-- preloader section-->
+<section class="preloader">
+	<div class="sk-spinner sk-spinner-pulse"></div>
+</section>
+
+<!-- navigation section -->
+<section class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+
+			<a href="http://www.iiitm.ac.in/" class="navbar-brand"><img alt="Brand" src="{% static 'students/images/logo_mid.png' %}"/></a>
+			
+			<a href="#" class="navbar-brand">TRAINING and PLACEMENT</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#home" class="smoothScroll">HOME</a></li>
+				<li><a href="#ABOUT" class="smoothScroll">ABOUT</a></li>
+				<li><a href="#info" class="smoothScroll">STUDENTS</a></li>
+                <li><a href="{% url 'alumni' %}" class="smoothScroll">ALUMNI</a></li>
+				<li><a href="#placement" class="smoothScroll">PLACEMENTS</a></li>
+				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+                <li><a href="{% url 'register'%}"><button type="button" class="btn btn-secondary btn-sm">POTRAL</button></a> </li>
+				
+				
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+<!-- home section -->
+<section id="home" class="parallax-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12" >
+				<h1 class="heading">Atal Bihari Vajpayee</h1>
+				<h1 class="heading">Indian Institute of Information Technology and Management</h1>
+			</div>
+		</div>
+	</div>		
+</section>
+
+<!-- ABOUT section -->
+<section id="ABOUT" class="parallax-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
+				<h1 class="heading">ABOUT IIITM</h1>
+				<hr>
+			</div>
+			<br>
+
+			<div class="col-md-offset-2 col-md-8 col-sm-12 text-center  wow fadeInUp" >
+
+				<div class="accordion" id="accordion2">
+  
+   <div class="accordion-group">
+    <div class="accordion-heading">
+      
+        <p>Indian Institute of Information Technology and Management (IIITM) Gwalior, Madhya Pradesh is an autonomous institute set by Government of India, Ministry of Human Resource Development (MHRD) in 1997. It is an effort by MHRD towards creating professionals in areas of Management and Information Technology from the same institute. This institute was created for facilitating higher education, research, and consultancy in areas of IT and Business Management. Initially started as IIITM, this institute was prefixed with ABV in 2002 to honor former Prime Minister Atal Behari Vajpayee.
+The Institute offers various programmes at Masters and Doctoral level. Sprawling across 160 lush green acres on the foothills of Gwalior Fort, the Institute is selfcontained with basic amenities for all round development of students. The Institute’s activities are aimed at developing amongst students an inquisitive mind and a culture of camaraderie and research.</p>
+      
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+    	<h4>INI</h4>
+        <p>Institute of National Importance (INI) is a status that may be conferred to a premier public higher education institution in India by an act of parliament, an institution which "serves as a pivotal player in developing highly skilled personnel within the specified region of the country/state". INIs receive special recognition and funding.
+
+		</p>
+        <h4>SMDP</h4>
+		<p>Special Manpower Development Program or SMDP is project undertaken by Ministry of Information technology of the Government of India aiming to impart training in VLSI design and related software to engineering students pursuing Masters or Doctoral programmes in the domains of Computer Science, Electronics, IT etc.
+</p>
+      </div>
+
+    <button class="SeeMore2 btn btn-secondary-outline" data-toggle="collapse" href="#collapseTwo" >Read More</button>
+  </div>
+
+</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</section>	
+<!-- info section -->
+<section id="info" class="parallax-section">
+	<div class="container ">
+
+			<div class=" text-center">
+				<h1 class="heading">STUDENT</h1>
+				<hr>
+			</div>
+        <div class="row ">
+			<div class="hovereffect col-md-3 col-sm-4 wow fadeInUp text-center " data-wow-delay="0.3s">
+			
+				<a href="{% url 'ipg' %}" style="text-decoration: none" >
+				<img class="img-responsive" src="{% static 'students\images\ipg.png' %}"></a>
+				<div class="overlay">
+           			<h2>IPG</h2>
+           		</div>
+        	    {% comment %}<div  class="collapse text-center" id="collapse1" >
+				<button  type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey"><a href="{% url 'ipg' %}">1<sup>st</sup> year</a></button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">2<sup>nd</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">3<sup>rd</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">4<sup>th</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">5<sup>th</sup> year</button>
+				</div>{% endcomment %}
+            </div>
+			<div class="hovereffect col-md-3 col-sm-4 wow fadeInUp text-center" data-wow-delay="0.3s">
+				<a href="{% url 'mtech' %}" style="text-decoration: none">
+				<img class="img-responsive" src="{% static 'students\images\mtech.png' %}"> </a>
+				<div class="overlay">
+           			<h2>M.TECH.</h2>
+           		</div>
+				{% comment %}<div  class="collapse text-center" id="collapse2" >
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">1<sup>st</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">2<sup>nd</sup> year</button>
+				</div>{% endcomment %}
+			</div>
+			<div class="hovereffect col-md-3 col-sm-4 wow fadeInUp text-center" data-wow-delay="0.3s">
+				<a href="{% url 'mba' %}" style="text-decoration: none">
+				<img class="img-responsive" src="{% static 'students\images\mba.png' %}"> </a>
+				<div class="overlay">
+           			<h2>MBA</h2>
+           		</div>
+				{% comment %}<div  class="collapse text-cente" id="collapse3" >
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">1<sup>st</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">2<sup>nd</sup> year</button>
+				</div>{% endcomment %}
+			</div>
+            <div class="hovereffect col-md-3 col-sm-4 wow fadeInUp text-center" data-wow-delay="0.3s">
+				<a href="{% url 'phd' %}" style="text-decoration: none">
+				<img class="img-responsive" src="{% static 'students\images\phd.jpg' %}"> </a>
+				<div class="overlay">
+           			<h2>PHD</h2>
+           		</div>
+				{% comment %}<div  class="collapse text-center" id="collapse3" >
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">1<sup>st</sup> year</button>
+				<button type="button" class="w3-btn w3-small w3-grey w3-hover-light-grey">2<sup>nd</sup> year</button>
+				</div>{% endcomment %}
+			</div>
+			</div>
+			</div>
+			</section>
+
+
+
+
+<!--charts-->
+<section  class="parallax-section" id="placement">
+<div class="container-fluid ">
+<div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
+				<h1 class="heading">PLACEMENT STATISTICS</h1>
+				<hr>
+			</div>
+    <div class="container-fluid row">
+        <div class="col-md-4 col-sm-4 wow fadeInUp" id="columnchart_material" data-wow-delay="0.3s" style="width: 900px; height: 500px;"></div>
+        <div class="col-md-6 col-sm-6 wow fadeInUp table-responsive " data-wow-delay="0.3s">
+            <table class="table table-hover">
+  <thead>
+    <tr>
+      <th><h1><small> Past Recruiters</small></h1>
+</th>
+
+    </tr>
+  </thead>
+                <tbody>
+                <tr>
+      <td>Adobe </td>
+      <td>Google </td>
+      <td>P-value </td>
+      <td>Alcatel Lucent </td>
+        <td>Goldman Sachs  </td>
+        <td>Practo  </td>
+    </tr>
+                <tr>
+      <td>Amazon </td>
+      <td>HackerRank  </td>
+      <td>Oracle </td>
+      <td>Reliance </td>
+        <td>Amdocs </td>
+        <td>HCL  </td>
+    </tr>
+                <tr>
+      <td>Aujas Networks </td>
+      <td>IBM </td>
+      <td>IBM</td>
+      <td>Belzabar </td>
+        <td>Info Edge  </td>
+        <td>Samsung India   </td>
+    </tr>
+                <tr>
+      <td>CISCO  </td>
+      <td>Infosys  </td>
+      <td>Snapdeal </td>
+      <td>Clicklabs </td>
+        <td>TCS   </td>
+        <td>KPIT-Cummins   </td>
+    </tr>
+                 <tr>
+      <td>Codenation   </td>
+      <td>LPU   </td>
+      <td>Works Applications  </td>
+      <td>Deloitte  </td>
+        <td>Mahindra British Telecom   </td>
+        <td>Wipro  </td>
+    </tr>
+                <tr>
+      <td>Direct-i </td>
+      <td> Microsoft    </td>
+      <td>WNS   </td>
+      <td>Fisierv   </td>
+        <td>Mu Sigma </td>
+        <td> Yahoo</td>
+    </tr>
+                <tr>
+                    <td>Flipkart</td>
+                    <td>Paytm</td>
+                </tr>
+                </tbody>
+
+</table>
+        </div>
+
+</div></div>
+
+</section>
+
+
+<!-- footer section -->
+<footer class="parallax-section" id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+				<h2 class="heading">Contact Info.</h2>
+                <div>
+                    Prof. Rajendra Sahu <br>
+                    Chairman, Placement Cell<br>
+
+                    Contact Office: +91-751-2449804<br>
+                    E-mail :  rsahu [at] iiitm.ac.in
+
+                </div>
+                <br>
+                <div>
+                    Dr. Manoj Kumar Dash <br>
+
+
+                    Contact Office: +91-751-2449818<br>
+                    E-mail :  manojdash [at] iiitm.ac.in
+
+                </div>
+				<div class="ph">
+
+						Mr. Omvir Singh Bhadauria<br>
+                        Carrer Development and Training
+                        Contact Office:
+                        +91-9827259179 +91-8435805012
+
+
+				</div>
+				<div class="address">
+				Mr. Prakash Paliwal<br>
+				Executive
+				Contact Office: +91-751-2449736
+
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+				<h2 class="heading">Placement Email</h2>
+					placement [at] iiitm.ac.in <br>
+                    placement.iiitmg [at] gmail.com
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+
+<!-- copyright section -->
+<section id="copyright">
+	<div class="container-fluid" >
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h3>ABV-IIITM Gwalior</h3>
+				<p>Copyright © 2016. All right Reserved.</p>
+				developed by..
+				<br>
+				Pranay Verma | Gaurav Agarwal
+				
+      
+      </div>
+
+	</div>
+</div>
+	
+
+</section>
+
+
+<!-- JAVASCRIPT JS FILES -->	
+<script src="{% static 'students/js/jquery.js' %}"></script>
+<script src="{% static 'students/js/bootstrap.min.js' %}"}></script>
+<script src="{% static 'students/js/jquery.parallax.js' %}"}></script>
+<script src="{% static 'students/js/smoothscroll.js' %}"></script>
+
+<script src="{% static 'students/js/wow.min.js' %}"></script>
+<script src="{% static 'students/js/custom.js' %}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'avg', 'Highest'],
+          ['2011', 4.58, 12.5],
+          ['2012', 4.8, 16],
+          ['2014', 8.06, 31.5],
+                ['2015', 6.87, 25.00],
+
+          
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Average and Highest Packages Offered(Year Wise)',
+            subtitle: 'Placements Offered in Lacs',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+</body>
+</html>

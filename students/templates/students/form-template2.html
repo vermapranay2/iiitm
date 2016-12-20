@@ -1,0 +1,12 @@
+{% load bootstrap3 %}
+{% for field in form %}
+
+        <div class="form-group row{% if field.field.required %} required{% endif %} wow fadeInUp ">
+            <div class="control-label col-sm-2">
+                {% bootstrap_label field.name %}
+            </div>
+            <div class=" col-sm-10">
+                {% bootstrap_field field show_label=False form_group_class=None %}
+            </div>
+        </div>
+   {% endfor %}
